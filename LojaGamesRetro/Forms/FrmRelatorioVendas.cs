@@ -78,6 +78,7 @@ namespace LojaGamesRetro.Forms
         {
             if (dgvVendas.CurrentRow == null)
             {
+                lblItens.Text = "Itens do pedido selecionado";
                 dgvItens.DataSource = null;
                 return;
             }
@@ -87,9 +88,12 @@ namespace LojaGamesRetro.Forms
 
             if (venda == null)
             {
+                lblItens.Text = "Itens do pedido selecionado";
                 dgvItens.DataSource = null;
                 return;
             }
+
+            lblItens.Text = $"Itens do pedido #{venda.Id} - {venda.Cliente}";
 
             dgvItens.DataSource = venda.Itens.Select(i => new
             {

@@ -11,6 +11,7 @@ namespace LojaGamesRetro.Forms
 
         private void FrmMenu_Load(object sender, EventArgs e)
         {
+            CancelButton = btnSair;
             AtualizarRodape();
         }
 
